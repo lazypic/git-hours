@@ -10,11 +10,14 @@ import (
 	"strings"
 	)
 
+func init() {
+	log.SetFlags(log.LstdFlags | log.Lshortfile)
+}
+
 func main() {
 	// zone
 	// start
 	// end
-	log.SetFlags(log.LstdFlags | log.Lshortfile)
 	cmd := exec.Command("git", "--no-pager", "log", "--reverse", "--date=iso", `--pretty=format:%ad %an %s`, `--after="2018-01-01 00:00:00 +0900"`, `--before="2019-12-31 23:59:59 +0900"`)
 	var stdout bytes.Buffer
 	var stderr bytes.Buffer
