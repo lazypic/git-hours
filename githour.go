@@ -68,4 +68,7 @@ func main() {
 		before = t
 	}
 	fmt.Println(total)
+	// how to get local timezone offset value
+	zone, offset := time.Now().Zone()
+	fmt.Println(zone, offset/60/60)
 }
