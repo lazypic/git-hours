@@ -31,7 +31,7 @@ func main() {
 	}
 	total, err := time.ParseDuration("1h")
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "%v", err)
+		fmt.Fprintf(os.Stderr, "%v\n", err)
 		os.Exit(1)
 	}
 	if stdout.String() == "" {
@@ -45,7 +45,7 @@ func main() {
 		iso2rfc3339 := fmt.Sprintf("%sT%s%s:%s", lists[0], lists[1], lists[2][0:3], lists[2][3:5])
 		t, err := time.Parse(time.RFC3339, iso2rfc3339)
 		if err != nil {
-			fmt.Fprintf(os.Stderr, "%v", err)
+			fmt.Fprintf(os.Stderr, "%v\n", err)
 		}
 		if n == 0 {
 			before = t
@@ -55,7 +55,7 @@ func main() {
 		fmt.Println("\t",elapsed)
 		h, err := time.ParseDuration("1h")
 		if err != nil {
-			fmt.Fprintf(os.Stderr, "%v", err)
+			fmt.Fprintf(os.Stderr, "%v\n", err)
 		}
 		if elapsed < h*2 {
 			total += elapsed
