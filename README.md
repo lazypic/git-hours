@@ -51,12 +51,6 @@ $ git hours -author woong
 $ git hours -author woong,kybin
 ```
 
-### timezone offset value
-사용자가 이용하는 타임존 시간을 인식하고 기본값으로 사용합니다.
-```
-$ git hours -zone +0900
-```
-
 ### debug mode
 ```
 $ git hours -debug

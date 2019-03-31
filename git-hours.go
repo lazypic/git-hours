@@ -60,23 +60,12 @@ func main() {
 	sincePtr := flag.String("since", since, "since(after) date")
 	untilPtr := flag.String("until", until, "until(before) date")
 	authorPtr := flag.String("author", "", "author name") // git option : --author="\(Adam\)\|\(Jon\)"
-	zonePtr := flag.String("zone", initZone, "zone offset time")
 	debugPtr := flag.Bool("debug", false, "debug mode")
 	helpPtr := flag.Bool("help", false, "print help")
 	flag.Parse()
 	if *helpPtr {
 		flag.PrintDefaults()
 		os.Exit(0)
-	}
-	if !timeFormat.MatchString(*sincePtr) {
-		fmt.Println("not matching since date format. must be " + DTF)
-		flag.PrintDefaults()
-		os.Exit(1)
-	}
-	if !timeFormat.MatchString(*untilPtr) {
-		fmt.Println("not matching until date format. must be " + DTF)
-		flag.PrintDefaults()
-		os.Exit(1)
 	}
 	//checkMultiname
 	var author string
@@ -95,8 +84,8 @@ func main() {
 		"--date=iso",
 		`--pretty=format:%ad %an %s`,
 		fmt.Sprintf(`--author=%s`, author),
-		fmt.Sprintf(`--after="%s 00:00:00 %s"`, *sincePtr, *zonePtr),
-		fmt.Sprintf(`--before="%s 23:59:59 %s"`, *untilPtr, *zonePtr),
+		fmt.Sprintf(`--since="%s"`, *sincePtr),
+		fmt.Sprintf(`--until="%s"`, *untilPtr),
 	)
 	var stdout bytes.Buffer
 	var stderr bytes.Buffer
