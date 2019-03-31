@@ -70,7 +70,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, stderr.String())
 		os.Exit(1)
 	}
-	total, err := time.ParseDuration("1h")
+	total, err := time.ParseDuration("0h")
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "%v\n", err)
 		os.Exit(1)
@@ -88,13 +88,12 @@ func main() {
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "%v\n", err)
 		}
-		if n == 0 {
-			before = t
-			continue
-		}
 		elapsed := t.Sub(before)
 		if *debugPtr {
-			fmt.Println("\t", elapsed)
+		 	if n != 0 {
+				fmt.Println(elapsed,">")
+			}
+			fmt.Println("\t", l)
 		}
 		h, err := time.ParseDuration("1h")
 		if err != nil {
