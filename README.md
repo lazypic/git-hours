@@ -73,19 +73,18 @@ From 2019-02-01 to 2019-03-31 : 13h1m48s
 ```
 
 
-## Plan
+## Why did I make it?
+https://github.com/kimmobrunfeldt/git-hours
+
+위 리포지터리를 통해서 git hours 명령어를 설치하기 위해서는 node.js 및 의존성을 생각하며 설치해야합니다.
+다운로드 하면 바로 사용할 수 있는 툴이 있으면 좋을 것 같아서 제작했습니다.
+
 git 리포지터리에서 아래명령어를 타이핑하면 commit 시간이 출력됩니다.
 
 ```
 $ git --no-pager log --reverse --date=iso --pretty=format:"%ad %an %s" --after="2018-01-01 00:00:00 +0900" --before="2018-12-31 23:59:59 +0900"
 ```
 
-시간포맷은 git에서 기본적으로 지원하는 ISO8601 방식을 사용했습니다.
-
-
-작업시간을 계산하는 방식은 아래 형태를 참고했습니다.
+시간포맷은 git에서 기본적으로 지원하는 ISO8601 방식을 사용했습니다. 작업시간을 계산하는 방식은 아래 형태를 참고했습니다.
 
 https://github.com/kimmobrunfeldt/git-hours#how-it-works
-
-위 리포지터리를 통해서 git hours 명령어를 설치하기 위해서는 node.js 및 의존성을 생각하며 설치해야합니다.
-다운로드 하면 바로 사용할 수 있는 툴이 있으면 좋을 것 같아서 제작했습니다.
