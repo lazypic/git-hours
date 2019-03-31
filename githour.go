@@ -106,5 +106,5 @@ func main() {
 		}
 		before = t
 	}
-	fmt.Println(*startPtr, "~", *endPtr, total)
+	fmt.Printf("%s~%s : %s\n", *startPtr, *endPtr, total)
 }
