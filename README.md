@@ -43,12 +43,12 @@ $ git hours -since 2019-02-01 -until 2019-02-28
 
 ### set author
 ```
-$ git hours -author woong
+$ git hours -author name
 ```
 
 ### set mutliple author
 ```
-$ git hours -author woong,kybin
+$ git hours -author name1,name2
 ```
 
 ### debug mode
