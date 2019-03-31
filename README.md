@@ -5,7 +5,7 @@ git log 를 이용해서 작업시간을 계산하는 명령어 입니다.
 
 ## Download & Install
 - Windows
-- macOS
+- [macOS](https://github.com/lazypic/git-hours/releases/download/v0.0.1/git-hours.zip)
 - Linux
 
 각 OS에 맞는 명령어를 다운로드 받습니다.(준비중)
