@@ -34,14 +34,14 @@ func beforeMonth() (string, string) {
 	} else {
 		m -= 1
 	}
-	start := time.Date(y, m, 1, 0, 0, 0, 0, time.Now().Location())
-	return fmt.Sprintf(start.Format(DTF)), fmt.Sprintf(start.AddDate(0, 1, 0).Add(-time.Nanosecond).Format(DTF))
+	since := time.Date(y, m, 1, 0, 0, 0, 0, time.Now().Location())
+	return fmt.Sprintf(since.Format(DTF)), fmt.Sprintf(since.AddDate(0, 1, 0).Add(-time.Nanosecond).Format(DTF))
 }
 
 func thisMonth() (string, string) {
 	y, m, _ := time.Now().Date()
-	start := time.Date(y, m, 1, 0, 0, 0, 0, time.Now().Location())
-	return fmt.Sprintf(start.Format(DTF)), fmt.Sprintf(start.AddDate(0, 1, 0).Add(-time.Nanosecond).Format(DTF))
+	since := time.Date(y, m, 1, 0, 0, 0, 0, time.Now().Location())
+	return fmt.Sprintf(since.Format(DTF)), fmt.Sprintf(since.AddDate(0, 1, 0).Add(-time.Nanosecond).Format(DTF))
 }
 
 func init() {
@@ -56,10 +56,10 @@ func init() {
 }
 
 func main() {
-	startMonth, endMonth := beforeMonth()
-	startPtr := flag.String("start", startMonth, "start date")
+	since, until := beforeMonth()
+	sincePtr := flag.String("since", since, "since(after) date")
+	untilPtr := flag.String("until", until, "until(before) date")
 	authorPtr := flag.String("author", "", "author name") // git option : --author="\(Adam\)\|\(Jon\)"
-	endPtr := flag.String("end", endMonth, "end date")
 	zonePtr := flag.String("zone", initZone, "zone offset time")
 	debugPtr := flag.Bool("debug", false, "debug mode")
 	helpPtr := flag.Bool("help", false, "print help")
@@ -68,13 +68,13 @@ func main() {
 		flag.PrintDefaults()
 		os.Exit(0)
 	}
-	if !timeFormat.MatchString(*startPtr) {
-		fmt.Println("not matching start date format. must be " + DTF)
+	if !timeFormat.MatchString(*sincePtr) {
+		fmt.Println("not matching since date format. must be " + DTF)
 		flag.PrintDefaults()
 		os.Exit(1)
 	}
-	if !timeFormat.MatchString(*endPtr) {
-		fmt.Println("not matching end date format. must be " + DTF)
+	if !timeFormat.MatchString(*untilPtr) {
+		fmt.Println("not matching until date format. must be " + DTF)
 		flag.PrintDefaults()
 		os.Exit(1)
 	}
@@ -95,8 +95,8 @@ func main() {
 		"--date=iso",
 		`--pretty=format:%ad %an %s`,
 		fmt.Sprintf(`--author=%s`, author),
-		fmt.Sprintf(`--after="%s 00:00:00 %s"`, *startPtr, *zonePtr),
-		fmt.Sprintf(`--before="%s 23:59:59 %s"`, *endPtr, *zonePtr),
+		fmt.Sprintf(`--after="%s 00:00:00 %s"`, *sincePtr, *zonePtr),
+		fmt.Sprintf(`--before="%s 23:59:59 %s"`, *untilPtr, *zonePtr),
 	)
 	var stdout bytes.Buffer
 	var stderr bytes.Buffer
@@ -117,7 +117,7 @@ func main() {
 		os.Exit(1)
 	}
 	if stdout.String() == "" {
-		fmt.Printf("From %s to %s : %s\n", *startPtr, *endPtr, total)
+		fmt.Printf("From %s to %s : %s\n", *sincePtr, *untilPtr, total)
 		os.Exit(0)
 	}
 
@@ -153,5 +153,5 @@ func main() {
 		}
 		before = t
 	}
-	fmt.Printf("From %s to %s : %s\n", *startPtr, *endPtr, total)
+	fmt.Printf("From %s to %s : %s\n", *sincePtr, *untilPtr, total)
 }

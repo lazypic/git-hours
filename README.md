@@ -33,12 +33,12 @@ From 2019-03-01 to 2019-03-31 : 80h29m10s
 $ git hours -help
 ```
 
-### start, end date
+### since, until date
 기본적으로 아무값도 넣지 않으면 지난달의 시작일, 마지막일로 설정됩니다.
 원한다면 사용자가 아래처럼 시작일, 마지막일을 설정할 수 있습니다.
 
 ```
-$ git hours -start 2019-02-01 -end 2019-02-28
+$ git hours -since 2019-02-01 -until 2019-02-28
 ```
 
 ### set author
