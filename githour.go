@@ -39,6 +39,7 @@ func init() {
 
 func main() {
 	startPtr := flag.String("start", "2018-01-01", "start date")
+	authorPtr := flag.String("author", "", "author name") // git option : --author="\(Adam\)\|\(Jon\)"
 	endPtr := flag.String("end", "2019-12-31", "end date")
 	zonePtr := flag.String("zone", initZone, "zone offset time")
 	debugPtr := flag.Bool("debug", false, "debug mode")
@@ -58,6 +59,15 @@ func main() {
 		flag.PrintDefaults()
 		os.Exit(1)
 	}
+	//checkMultiname
+	var author string
+	if strings.Contains(*authorPtr, ",") {
+		author += `\(`
+		author += strings.Join( strings.Split(*authorPtr, ","), `\)\|\(`)
+		author += `\)`
+	} else {
+		author = *authorPtr
+	}
 	cmd := exec.Command(
 		"git",
 		"--no-pager",
@@ -65,6 +75,7 @@ func main() {
 		"--reverse",
 		"--date=iso",
 		`--pretty=format:%ad %an %s`,
+		fmt.Sprintf(`--author=%s`, author),
 		fmt.Sprintf(`--after="%s 00:00:00 %s"`, *startPtr, *zonePtr),
 		fmt.Sprintf(`--before="%s 23:59:59 %s"`, *endPtr, *zonePtr),
 	)
