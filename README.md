@@ -4,7 +4,7 @@ git log 를 이용해서 작업시간을 계산하는 유틸리티.
 
 ## Roadmap
 리포지터리에서 아래처럼 타이핑하면 commit 시간이 출력된다.
-시간포멧은 git에서 기본적으로 지원하는 ISO8601 방식을 채택했다.
+시간포맷은 git에서 기본적으로 지원하는 ISO8601 방식을 채택했다.
 
 ```
 $ git --no-pager log --reverse --date=iso --pretty=format:"%ad %an %s" --after="2018-01-01 00:00:00 +0900" --before="2018-12-31 23:59:59 +0900"
