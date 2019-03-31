@@ -18,7 +18,7 @@ git log 를 이용해서 작업시간을 계산하는 명령어 입니다.
 $ go get -u github.com/lazypic/git-hours
 ```
 
-## How to use.
+## How to use
 git 리포지터리로 이동해서 아래처럼 터미널에서 타이핑해주세요.
 
 ```
