@@ -20,10 +20,12 @@ help
 $ git hours -help
 ```
 
-set start, end
+시작일, 마지막날짜를 설정하는 방법
+기본값은 전월의 시작일, 마지막 날짜로 설정되어있습니다.
+
 
 ```
-$ git hours -start 2018-01-01 -end 2019-12-31
+$ git hours -start 2019-02-01 -end 2019-02-28
 ```
 
 set author
