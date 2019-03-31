@@ -90,8 +90,8 @@ func main() {
 		}
 		elapsed := t.Sub(before)
 		if *debugPtr {
-		 	if n != 0 {
-				fmt.Println(elapsed,">")
+			if n != 0 {
+				fmt.Println(elapsed, ">")
 			}
 			fmt.Println("\t", l)
 		}
