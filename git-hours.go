@@ -12,7 +12,7 @@ import (
 	"strings"
 	"time"
 )
-
+const DTF string = "2006-01-02" // Default Time Format
 var initZone string
 var timeFormat = regexp.MustCompile(`^\d{4}-\d{2}-\d{2}$`)
 var ISO8601 = regexp.MustCompile(`^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2} [+-]\d{4}$`)
@@ -35,13 +35,13 @@ func beforeMonth() (string, string) {
 		m -= 1
 	}
 	start := time.Date(y, m, 1, 0, 0, 0, 0, time.Now().Location())
-	return fmt.Sprintf(start.Format("2006-01-02")), fmt.Sprintf(start.AddDate(0, 1, 0).Add(-time.Nanosecond).Format("2006-01-02"))
+	return fmt.Sprintf(start.Format(DTF)), fmt.Sprintf(start.AddDate(0, 1, 0).Add(-time.Nanosecond).Format(DTF))
 }
 
 func thisMonth() (string, string) {
 	y, m, _ := time.Now().Date()
 	start := time.Date(y, m, 1, 0, 0, 0, 0, time.Now().Location())
-	return fmt.Sprintf(start.Format("2006-01-02")), fmt.Sprintf(start.AddDate(0, 1, 0).Add(-time.Nanosecond).Format("2006-01-02"))
+	return fmt.Sprintf(start.Format(DTF)), fmt.Sprintf(start.AddDate(0, 1, 0).Add(-time.Nanosecond).Format(DTF))
 }
 
 func init() {
@@ -69,12 +69,12 @@ func main() {
 		os.Exit(0)
 	}
 	if !timeFormat.MatchString(*startPtr) {
-		fmt.Println("not matching start date format. must be 0000-00-00")
+		fmt.Println("not matching start date format. must be " + DTF)
 		flag.PrintDefaults()
 		os.Exit(1)
 	}
 	if !timeFormat.MatchString(*endPtr) {
-		fmt.Println("not matching end date format. must be 0000-00-00")
+		fmt.Println("not matching end date format. must be " + DTF)
 		flag.PrintDefaults()
 		os.Exit(1)
 	}
@@ -117,7 +117,7 @@ func main() {
 		os.Exit(1)
 	}
 	if stdout.String() == "" {
-		fmt.Printf("%s~%s : %s\n", *startPtr, *endPtr, total)
+		fmt.Printf("From %s to %s : %s\n", *startPtr, *endPtr, total)
 		os.Exit(0)
 	}
 
@@ -153,5 +153,5 @@ func main() {
 		}
 		before = t
 	}
-	fmt.Printf("%s~%s : %s\n", *startPtr, *endPtr, total)
+	fmt.Printf("From %s to %s : %s\n", *startPtr, *endPtr, total)
 }
