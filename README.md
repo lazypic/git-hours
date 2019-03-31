@@ -3,7 +3,11 @@
 git log 를 이용해서 작업시간을 계산하는 명령어 입니다.
 
 
-## Install
+## Download & Install
+- Windows
+- macOS
+- Linux
+
 명령어를 다운로드 받습니다.(준비중) 터미널에서 명령어를 자동인식 할 수 있는 $PATH 환경변수에 잡혀있는 bin 폴더에 다운받은 git-hours 명령어를 넣어줍니다.
 명령어 이름이 "git-hours"형태이기 때문에 git이 자동으로 서브명령어로 인식, 작동됩니다.
 
