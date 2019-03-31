@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"errors"
 	"flag"
 	"fmt"
 	"log"
@@ -14,6 +15,16 @@ import (
 
 var initZone string
 var timeFormat = regexp.MustCompile(`^\d{4}-\d{2}-\d{2}$`)
+var ISO8601 = regexp.MustCompile(`^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2} [+-]\d{4}$`)
+var findISO8601 = regexp.MustCompile(`\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2} [+-]\d{4}`)
+var RFC3339 = regexp.MustCompile(`^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[+-]\d{2}:\d{2}$`)
+
+func ISO8601_to_RFC3339(t string) (string, error) {
+	if !ISO8601.MatchString(t) {
+		return t, errors.New("time string is not ISO8601 format.")
+	}
+	return fmt.Sprintf("%sT%s%s:%s", t[0:10], t[11:19], t[20:23], t[23:25]), nil
+}
 
 func init() {
 	log.SetFlags(log.LstdFlags | log.Lshortfile)
@@ -22,7 +33,7 @@ func init() {
 	if offset > 0 {
 		initZone = fmt.Sprintf("+%04d", offset/60/60*100)
 	} else {
-		initZone = fmt.Sprintf("-%04d", offset/60/60*100)
+		initZone = fmt.Sprintf("-%04d", (-1*offset)/60/60*100)
 	}
 }
 
@@ -82,9 +93,15 @@ func main() {
 
 	var before time.Time
 	for n, l := range strings.Split(stdout.String(), "\n") {
-		lists := strings.Split(l, " ")
-		iso2rfc3339 := fmt.Sprintf("%sT%s%s:%s", lists[0], lists[1], lists[2][0:3], lists[2][3:5])
-		t, err := time.Parse(time.RFC3339, iso2rfc3339)
+		getTime := findISO8601.FindString(l)
+		if getTime == "" {
+			continue
+		}
+		rfctime, err := ISO8601_to_RFC3339(getTime)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "%v\n", err)
+		}
+		t, err := time.Parse(time.RFC3339, rfctime)
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "%v\n", err)
 		}
