@@ -31,6 +31,9 @@ func main() {
 	debugPtr := flag.Bool("debug", false, "debug mode")
 	helpPtr := flag.Bool("help", false, "print help")
 	flag.Parse()
+	if *helpPtr {
+		flag.PrintDefaults()
+	}
 	cmd := exec.Command(
 		"git",
 		"--no-pager",
