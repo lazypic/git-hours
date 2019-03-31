@@ -19,7 +19,7 @@ $ go get -u github.com/lazypic/git-hours
 ```
 
 ## How to use.
-터미널에 아래처럼 간단하게 타이핑해주세요.
+git 리포지터리로 이동해서 아래처럼 터미널에서 타이핑해주세요.
 
 ```
 $ git hours
