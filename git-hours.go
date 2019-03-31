@@ -34,14 +34,14 @@ func beforeMonth() (string, string) {
 	} else {
 		m -= 1
 	}
-	start := time.Date(y,m,1,0,0,0,0, time.Now().Location())
-	return fmt.Sprintf(start.Format("2006-01-02")), fmt.Sprintf(start.AddDate(0,1,0).Add(-time.Nanosecond).Format("2006-01-02"))
+	start := time.Date(y, m, 1, 0, 0, 0, 0, time.Now().Location())
+	return fmt.Sprintf(start.Format("2006-01-02")), fmt.Sprintf(start.AddDate(0, 1, 0).Add(-time.Nanosecond).Format("2006-01-02"))
 }
 
 func thisMonth() (string, string) {
 	y, m, _ := time.Now().Date()
-	start := time.Date(y,m,1,0,0,0,0, time.Now().Location())
-	return fmt.Sprintf(start.Format("2006-01-02")), fmt.Sprintf(start.AddDate(0,1,0).Add(-time.Nanosecond).Format("2006-01-02"))
+	start := time.Date(y, m, 1, 0, 0, 0, 0, time.Now().Location())
+	return fmt.Sprintf(start.Format("2006-01-02")), fmt.Sprintf(start.AddDate(0, 1, 0).Add(-time.Nanosecond).Format("2006-01-02"))
 }
 
 func init() {
@@ -82,7 +82,7 @@ func main() {
 	var author string
 	if strings.Contains(*authorPtr, ",") {
 		author += `\(`
-		author += strings.Join( strings.Split(*authorPtr, ","), `\)\|\(`)
+		author += strings.Join(strings.Split(*authorPtr, ","), `\)\|\(`)
 		author += `\)`
 	} else {
 		author = *authorPtr
