@@ -1,14 +1,20 @@
 # git-hours
 
-git log 를 이용해서 작업시간을 계산하는 유틸리티.
+git log 를 이용해서 작업시간을 계산하는 명령어 입니다.
 
 
-## Install
-명령어를 다운로드 받아서 명령어를 자동인식 할 수 있는 bin 폴더에 넣어줍니다.
+## Download & Install
+- Windows
+- [macOS](https://github.com/lazypic/git-hours/releases/download/v0.0.1/git-hours.zip)
+- Linux
+
+각 OS에 맞는 명령어를 다운로드 받습니다.(준비중)
+
+터미널에서 명령어를 자동인식 할 수 있는 $PATH 환경변수에 잡혀있는 bin 폴더에 다운받은 git-hours 명령어를 넣어줍니다.
 명령어 이름이 "git-hours"형태이기 때문에 git이 자동으로 서브명령어로 인식합니다.
 
 ## How to use.
-아래처럼 타이핑하면 된다.
+터미널에 아래처럼 간단하게 타이핑해주세요.
 
 ```
 $ git hours
@@ -17,38 +23,54 @@ From 2019-03-01 to 2019-03-31 : 80h29m10s
 
 ## Detail
 
-help
+### help
 ```
 $ git hours -help
 ```
 
-시작일, 마지막날짜를 설정하는 방법
-기본값은 지난달의 시작일, 마지막 날짜로 설정되어있습니다.
-
+### start, end date
+기본적으로 아무값도 넣지 않으면 지난달의 시작일, 마지막일로 설정됩니다.
+원한다면 사용자가 아래처럼 시작일, 마지막일을 설정할 수 있습니다.
 
 ```
 $ git hours -start 2019-02-01 -end 2019-02-28
 ```
 
-set author
+### set author
 ```
 $ git hours -author woong
 ```
 
-set mutliple author
+### set mutliple author
 ```
 $ git hours -author woong,kybin
 ```
 
-timezone offset
-기본적으로 현재 지역의 타임존 시간을 인식함.
+### timezone offset value
+사용자가 이용하는 타임존 시간을 인식하고 기본값으로 사용합니다.
 ```
 $ git hours -zone +0900
 ```
 
-debug mode
+### debug mode
 ```
 $ git hours -debug
+```
+
+커밋과 커밋간 시간차를 표기합니다, 시간, 작성자, 커밋내용을 볼 수 있습니다.
+```
+	 2019-03-31 23:28:40 +0900 kim hanwoong edit go fmt
+2m26s >
+	 2019-03-31 23:31:06 +0900 kim hanwoong 설명을 추가함.
+6m34s >
+	 2019-03-31 23:37:40 +0900 kim hanwoong edit comment
+1m46s >
+	 2019-03-31 23:39:26 +0900 hanwoong kim Update README.md
+38s >
+	 2019-03-31 23:40:04 +0900 hanwoong kim Update README.md
+1m12s >
+	 2019-03-31 23:41:16 +0900 hanwoong kim Update README.md
+From 2019-02-01 to 2019-03-31 : 13h1m48s
 ```
 
 
