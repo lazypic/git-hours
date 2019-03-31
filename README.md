@@ -47,7 +47,7 @@ $ git hours -author woong,kybin
 ```
 
 ### timezone offset value
-기본적으로 현재 지역의 타임존 시간을 인식함.
+기본적으로 사용자가 이용하는 타임존 시간을 인식하고 기본값으로 사용합니다.
 ```
 $ git hours -zone +0900
 ```
