@@ -11,14 +11,26 @@ import (
 	"time"
 )
 
+var initZone string
+
 func init() {
 	log.SetFlags(log.LstdFlags | log.Lshortfile)
+	// how to get local timezone offset value
+	_, offset := time.Now().Zone()
+	if offset > 0 {
+		initZone = fmt.Sprintf("+%04d", offset/60/60*100)
+	} else {
+		initZone = fmt.Sprintf("-%04d", offset/60/60*100)
+	}
 }
 
 func main() {
-	startPtr := flag.String("start", "2018-01-01", "start date.")
-	endPtr := flag.String("end", "2019-12-31", "end date.")
-	zonePtr := flag.String("zone", "+0900", "zone offset time")
+	startPtr := flag.String("start", "2018-01-01", "start date")
+	endPtr := flag.String("end", "2019-12-31", "end date")
+	zonePtr := flag.String("zone", initZone, "zone offset time")
+	debugPtr := flag.Bool("debug", false, "debug mode")
+	helpPtr := flag.Bool("help", false, "print help")
+	flag.Parse()
 	cmd := exec.Command(
 		"git",
 		"--no-pager",
@@ -65,7 +77,9 @@ func main() {
 			continue
 		}
 		elapsed := t.Sub(before)
-		fmt.Println("\t", elapsed)
+		if *debugPtr {
+			fmt.Println("\t", elapsed)
+		}
 		h, err := time.ParseDuration("1h")
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "%v\n", err)
@@ -77,8 +91,5 @@ func main() {
 		}
 		before = t
 	}
-	fmt.Println(total)
-	// how to get local timezone offset value
-	zone, offset := time.Now().Zone()
-	fmt.Println(zone, offset/60/60)
+	fmt.Println(*startPtr, "~", *endPtr, total)
 }
