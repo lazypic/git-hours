@@ -1,4 +1,4 @@
-# githour
+# git-hours
 
 git log 를 이용해서 작업시간을 계산하는 유틸리티.
 
