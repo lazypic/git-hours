@@ -87,5 +87,5 @@ $ git --no-pager log --reverse --date=iso --pretty=format:"%ad %an %s" --after="
 
 https://github.com/kimmobrunfeldt/git-hours#how-it-works
 
-위 리포지터리를 통해서 git hours 명령어를 설치하는것은 많은 의존성을 생각해야 합니다.
-lazypic 팀내에 개발자를 위해 이 명령어를 만들게 되었습니다.
+위 리포지터리를 통해서 git hours 명령어를 설치하기 위해서는 node.js 및 의존성을 생각하며 설치해야합니다.
+다운로드 하면 바로 사용할 수 있는 툴이 있으면 좋을 것 같아 제작했습니다.
