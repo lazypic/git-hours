@@ -17,12 +17,12 @@ From 2019-03-01 to 2019-03-31 : 80h29m10s
 
 ## Detail
 
-help
+### help
 ```
 $ git hours -help
 ```
 
-
+### start, end date
 기본적으로 아무값도 넣지 않으면 지난달의 시작일, 마지막일로 설정됩니다.
 원한다면 사용자가 아래처럼 시작일, 마지막일을 설정할 수 있습니다.
 
@@ -30,25 +30,41 @@ $ git hours -help
 $ git hours -start 2019-02-01 -end 2019-02-28
 ```
 
-set author
+### set author
 ```
 $ git hours -author woong
 ```
 
-set mutliple author
+### set mutliple author
 ```
 $ git hours -author woong,kybin
 ```
 
-timezone offset
+### timezone offset value
 기본적으로 현재 지역의 타임존 시간을 인식함.
 ```
 $ git hours -zone +0900
 ```
 
-debug mode
+### debug mode
 ```
 $ git hours -debug
+```
+
+커밋과 커밋간 시간차를 표기합니다, 시간, 작성자, 커밋내용을 볼 수 있습니다.
+```
+	 2019-03-31 23:28:40 +0900 kim hanwoong edit go fmt
+2m26s >
+	 2019-03-31 23:31:06 +0900 kim hanwoong 설명을 추가함.
+6m34s >
+	 2019-03-31 23:37:40 +0900 kim hanwoong edit comment
+1m46s >
+	 2019-03-31 23:39:26 +0900 hanwoong kim Update README.md
+38s >
+	 2019-03-31 23:40:04 +0900 hanwoong kim Update README.md
+1m12s >
+	 2019-03-31 23:41:16 +0900 hanwoong kim Update README.md
+From 2019-02-01 to 2019-03-31 : 13h1m48s
 ```
 
 
