@@ -26,6 +26,24 @@ func ISO8601_to_RFC3339(t string) (string, error) {
 	return fmt.Sprintf("%sT%s%s:%s", t[0:10], t[11:19], t[20:23], t[23:25]), nil
 }
 
+func beforeMonth() (string, string) {
+	y, m, _ := time.Now().Date()
+	if m == 1 {
+		y -= 1
+		m = 12
+	} else {
+		m -= 1
+	}
+	start := time.Date(y,m,1,0,0,0,0, time.Now().Location())
+	return fmt.Sprintf(start.Format("2006-01-02")), fmt.Sprintf(start.AddDate(0,1,0).Add(-time.Nanosecond).Format("2006-01-02"))
+}
+
+func thisMonth() (string, string) {
+	y, m, _ := time.Now().Date()
+	start := time.Date(y,m,1,0,0,0,0, time.Now().Location())
+	return fmt.Sprintf(start.Format("2006-01-02")), fmt.Sprintf(start.AddDate(0,1,0).Add(-time.Nanosecond).Format("2006-01-02"))
+}
+
 func init() {
 	log.SetFlags(log.LstdFlags | log.Lshortfile)
 	// how to get local timezone offset value
@@ -38,9 +56,10 @@ func init() {
 }
 
 func main() {
-	startPtr := flag.String("start", "2018-01-01", "start date")
+	startMonth, endMonth := beforeMonth()
+	startPtr := flag.String("start", startMonth, "start date")
 	authorPtr := flag.String("author", "", "author name") // git option : --author="\(Adam\)\|\(Jon\)"
-	endPtr := flag.String("end", "2019-12-31", "end date")
+	endPtr := flag.String("end", endMonth, "end date")
 	zonePtr := flag.String("zone", initZone, "zone offset time")
 	debugPtr := flag.Bool("debug", false, "debug mode")
 	helpPtr := flag.Bool("help", false, "print help")
