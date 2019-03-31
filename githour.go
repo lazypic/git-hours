@@ -76,7 +76,7 @@ func main() {
 		os.Exit(1)
 	}
 	if stdout.String() == "" {
-		fmt.Println("0h")
+		fmt.Printf("%s~%s : %s\n", *startPtr, *endPtr, total)
 		os.Exit(0)
 	}
 
