@@ -3,7 +3,7 @@
 git log 를 이용해서 작업시간을 계산하는 명령어 입니다.
 
 
-## Download & Install
+## Download & Run
 - [Windows 64bit](https://github.com/lazypic/git-hours/releases/download/v0.0.3/git-hours_windows.tgz)
 - [macOS 64bit](https://github.com/lazypic/git-hours/releases/download/v0.0.3/git-hours_darwin.tgz)
 - [Linux 64bit](https://github.com/lazypic/git-hours/releases/download/v0.0.3/git-hours_linux.tgz)
