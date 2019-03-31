@@ -93,4 +93,5 @@ $ git --no-pager log --reverse --date=iso --pretty=format:"%ad %an %s" --after="
 
 https://github.com/kimmobrunfeldt/git-hours#how-it-works
 
-팀내 많은 개발자가 위 리포지터리의 git hour 명령어를 설치하는것은 많은 의존성이 물려있서 이 명령어를 만들게 되었습니다.
+위 리포지터리를 통해서 git hours 명령어를 설치하는것은 많은 의존성을 생각해야 합니다.
+팀내에 많은 개발자를 위해서 이 명령어를 만들게 되었습니다.
