@@ -7,11 +7,13 @@ import (
 	"log"
 	"os"
 	"os/exec"
+	"regexp"
 	"strings"
 	"time"
 )
 
 var initZone string
+var timeFormat = regexp.MustCompile(`^\d{4}-\d{2}-\d{2}$`)
 
 func init() {
 	log.SetFlags(log.LstdFlags | log.Lshortfile)
@@ -33,6 +35,17 @@ func main() {
 	flag.Parse()
 	if *helpPtr {
 		flag.PrintDefaults()
+		os.Exit(0)
+	}
+	if !timeFormat.MatchString(*startPtr) {
+		fmt.Println("not matching start date format. must be 0000-00-00")
+		flag.PrintDefaults()
+		os.Exit(1)
+	}
+	if !timeFormat.MatchString(*endPtr) {
+		fmt.Println("not matching end date format. must be 0000-00-00")
+		flag.PrintDefaults()
+		os.Exit(1)
 	}
 	cmd := exec.Command(
 		"git",
