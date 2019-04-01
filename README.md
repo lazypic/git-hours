@@ -41,6 +41,11 @@ $ git hours -help
 $ git hours -since 2019-02-01 -until 2019-02-28
 ```
 
+타임존값을 입력해야하는 상황이 필요할때는 아래처럼 입력할 수 있습니다.
+```
+$ git hours -since "2019-03-29 13:55:33 +0800"
+```
+
 ### set author
 ```
 $ git hours -author name
