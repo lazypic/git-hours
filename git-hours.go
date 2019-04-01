@@ -5,13 +5,13 @@ import (
 	"errors"
 	"flag"
 	"fmt"
-	"log"
 	"os"
 	"os/exec"
 	"regexp"
 	"strings"
 	"time"
 )
+
 const DTF string = "2006-01-02" // Default Time Format
 var initZone string
 var timeFormat = regexp.MustCompile(`^\d{4}-\d{2}-\d{2}$`)
@@ -42,17 +42,6 @@ func thisMonth() (string, string) {
 	y, m, _ := time.Now().Date()
 	since := time.Date(y, m, 1, 0, 0, 0, 0, time.Now().Location())
 	return fmt.Sprintf(since.Format(DTF)), fmt.Sprintf(since.AddDate(0, 1, 0).Add(-time.Nanosecond).Format(DTF))
-}
-
-func init() {
-	log.SetFlags(log.LstdFlags | log.Lshortfile)
-	// how to get local timezone offset value
-	_, offset := time.Now().Zone()
-	if offset > 0 {
-		initZone = fmt.Sprintf("+%04d", offset/60/60*100)
-	} else {
-		initZone = fmt.Sprintf("-%04d", (-1*offset)/60/60*100)
-	}
 }
 
 func main() {
