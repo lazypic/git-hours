@@ -99,3 +99,5 @@ $ git --no-pager log --reverse --date=iso-local --pretty=format:"%ad %an %s" --a
 시간포맷은 git에서 기본적으로 지원하는 ISO8601 방식을 사용했습니다. 작업시간을 계산하는 방식은 아래 형태를 참고했습니다.
 
 https://github.com/kimmobrunfeldt/git-hours#how-it-works
+
+첫번째 커밋전에 작성하는 코드는 프로그래밍 몰입시간을 포함하여 1시간을 기본값으로 셋팅했습니다.
