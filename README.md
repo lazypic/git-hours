@@ -1,6 +1,6 @@
 # git-hours
 
-git log 를 이용해서 작업시간을 계산하는 명령어 입니다.
+git-hours는 git log 데이터를 이용해서 작업시간을 계산하는 명령어 입니다.
 
 
 ## Download & Run
