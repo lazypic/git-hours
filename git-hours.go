@@ -13,7 +13,6 @@ import (
 )
 
 const DTF string = "2006-01-02" // Default Time Format
-var initZone string
 var timeFormat = regexp.MustCompile(`^\d{4}-\d{2}-\d{2}$`)
 var ISO8601 = regexp.MustCompile(`^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2} [+-]\d{4}$`)
 var findISO8601 = regexp.MustCompile(`\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2} [+-]\d{4}`)
