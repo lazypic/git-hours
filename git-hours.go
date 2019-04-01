@@ -56,9 +56,9 @@ func init() {
 }
 
 func main() {
-	since, until := beforeMonth()
+	since, before := beforeMonth()
 	sincePtr := flag.String("since", since, "since(after) date")
-	untilPtr := flag.String("until", until, "until(before) date")
+	beforePtr := flag.String("before", before, "before date")
 	authorPtr := flag.String("author", "", "author name") // git option : --author="\(Adam\)\|\(Jon\)"
 	debugPtr := flag.Bool("debug", false, "debug mode")
 	helpPtr := flag.Bool("help", false, "print help")
@@ -85,7 +85,7 @@ func main() {
 		`--pretty=format:%ad %an %s`,
 		fmt.Sprintf(`--author=%s`, author),
 		fmt.Sprintf(`--since="%s"`, *sincePtr),
-		fmt.Sprintf(`--until="%s"`, *untilPtr),
+		fmt.Sprintf(`--before="%s"`, *beforePtr),
 	)
 	var stdout bytes.Buffer
 	var stderr bytes.Buffer
@@ -106,11 +106,11 @@ func main() {
 		os.Exit(1)
 	}
 	if stdout.String() == "" {
-		fmt.Printf("From %s to %s : %s\n", *sincePtr, *untilPtr, total)
+		fmt.Printf("From %s to %s : %s\n", *sincePtr, *beforePtr, total)
 		os.Exit(0)
 	}
 
-	var before time.Time
+	var beforeCommitTime time.Time
 	for n, l := range strings.Split(stdout.String(), "\n") {
 		getTime := findISO8601.FindString(l)
 		if getTime == "" {
@@ -124,7 +124,7 @@ func main() {
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "%v\n", err)
 		}
-		elapsed := t.Sub(before)
+		elapsed := t.Sub(beforeCommitTime)
 		if *debugPtr {
 			if n != 0 {
 				fmt.Println(elapsed, ">")
@@ -140,7 +140,7 @@ func main() {
 		} else {
 			total += h
 		}
-		before = t
+		beforeCommitTime = t
 	}
-	fmt.Printf("From %s to %s : %s\n", *sincePtr, *untilPtr, total)
+	fmt.Printf("From %s to %s : %s\n", *sincePtr, *beforePtr, total)
 }
