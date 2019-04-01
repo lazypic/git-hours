@@ -81,7 +81,7 @@ func main() {
 		"--no-pager",
 		"log",
 		"--reverse",
-		"--date=iso",
+		"--date=iso-local",
 		`--pretty=format:%ad %an %s`,
 		fmt.Sprintf(`--author=%s`, author),
 		fmt.Sprintf(`--since="%s"`, *sincePtr),
