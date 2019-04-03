@@ -94,7 +94,7 @@ func main() {
 		os.Exit(1)
 	}
 	if stdout.String() == "" {
-		fmt.Printf("From %s to %s : %s\n", *sincePtr, *beforePtr, total)
+		fmt.Printf("From %q to %q : %s\n", *sincePtr, *beforePtr, total)
 		os.Exit(0)
 	}
 
@@ -130,5 +130,5 @@ func main() {
 		}
 		beforeCommitTime = t
 	}
-	fmt.Printf("From %s to %s : %s\n", *sincePtr, *beforePtr, total)
+	fmt.Printf("From %q to %q : %s\n", *sincePtr, *beforePtr, total)
 }
