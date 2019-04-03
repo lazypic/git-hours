@@ -4,9 +4,9 @@ git-hours는 git log 데이터를 이용해서 작업시간을 계산하는 명�
 
 
 ## Download & Run
-- [Windows x86-64](https://github.com/lazypic/git-hours/releases/download/v0.0.4/git-hours_windows_x86-64.tgz)
-- [macOS x86-64](https://github.com/lazypic/git-hours/releases/download/v0.0.4/git-hours_darwin_x86-64.tgz)
-- [Linux x86-64](https://github.com/lazypic/git-hours/releases/download/v0.0.4/git-hours_linux_x86-64.tgz)
+- [Windows x86-64](https://github.com/lazypic/git-hours/releases/download/v0.0.5/git-hours_windows_x86-64.tgz)
+- [macOS x86-64](https://github.com/lazypic/git-hours/releases/download/v0.0.5/git-hours_darwin_x86-64.tgz)
+- [Linux x86-64](https://github.com/lazypic/git-hours/releases/download/v0.0.5/git-hours_linux_x86-64.tgz)
 
 각 OS에 맞는 명령어를 다운로드 받습니다.
 
