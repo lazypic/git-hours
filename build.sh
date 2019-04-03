@@ -1,9 +1,9 @@
 #!/bin/sh
 APP="git-hours"
 # OS별로 빌드함.
-GOOS=linux GOARCH=amd64 go build -o ./bin/linux/${APP} git-hours.go
-GOOS=windows GOARCH=amd64 go build -o ./bin/windows/${APP}.exe git-hours.go
-GOOS=darwin GOARCH=amd64 go build -o ./bin/darwin/${APP} git-hours.go
+GOOS=linux GOARCH=amd64 go build -o ./bin/linux/${APP} git-hours.go timefunc.go
+GOOS=windows GOARCH=amd64 go build -o ./bin/windows/${APP}.exe git-hours.go timefunc.go
+GOOS=darwin GOARCH=amd64 go build -o ./bin/darwin/${APP} git-hours.go timefunc.go
 
 # Github Release에 업로드 하기위해 압축
 cd ./bin/linux/ && tar -zcvf ../${APP}_linux_x86-64.tgz . && cd -
