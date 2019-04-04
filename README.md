@@ -20,6 +20,7 @@ $ go get -u github.com/lazypic/git-hours
 
 ## How to use
 git 리포지터리로 이동해서 아래처럼 터미널에서 타이핑해주세요.
+타임존 Offset 값은 지역에 따라서 자동지원합니다.
 
 ```
 $ git hours
