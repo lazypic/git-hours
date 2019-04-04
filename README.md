@@ -36,36 +36,41 @@ $ git hours -help
 ```
 
 ### since, before
-기본적으로 아무값도 넣지 않으면 지난달의 시작일, 마지막일로 설정됩니다.
-원한다면 사용자가 아래처럼 시작일, 마지막일을 설정할 수 있습니다.
+By default, if no value is entered, it is set to the start date and last day of the last month.
+If desired, the user can set the start date and the last date.
 
 ```
 $ git hours -since 2019-02-01 -before today
 ```
 
-타임존값을 입력해야하는 상황이 필요할때는 아래처럼 입력할 수 있습니다.
+If you want to time zone value, you can type:
 ```
 $ git hours -since "2019-03-29 13:55:33 +0800"
 ```
 
 
-정확한 견적이 필요할 때는 아래처럼 날짜,시간,타임존 모두 입력해주세요.
+If you need an accurate quote, enter the date, time, and time zone offset value as shown below.
 ```
 $ git hours -since "2019-03-01 00:00:00 +0900" -before "2019-03-31 23:59:59 +0900"
 ```
 
 ### author
+It can be calculated by specifying only the desired user.
 ```
 $ git hours -author name
 ```
 
 ### mutliple author
+You can calculate multiple users.
+
 ```
 $ git hours -author name1,name2
 ```
 
 ### debug
--debug 옵션을 명령어에 붙히면 커밋과 커밋간 시간차를 출력해줍니다. 시간, 작성자, 커밋내용을 볼 수 있습니다.
+If you add the -debug option to the command, it prints the time difference between the commit and the commit.
+You can view the time, author, and commit details.
+
 ```
 $ git hours -debug
 ```
@@ -90,17 +95,9 @@ From 2019-02-01 to 2019-03-31 : 13h1m48s
 ## Why did I make it?
 https://github.com/kimmobrunfeldt/git-hours
 
-위 리포지터리를 통해서 git hours 명령어를 설치하기 위해서는 node.js 및 의존성을 생각하며 설치해야합니다.
-다운로드 후 바로 실행할 수 있는 툴이 있으면 좋을 것 같아서 제작했습니다.
+To install the git hours command through the above repository uri, you need to install node.js and dependencies.
+I thought that it would be good if there was a tool that can be executed immediately after downloading.
 
-git 리포지터리에서 아래명령어를 타이핑하면 commit 시간이 출력됩니다.
+reference model : https://github.com/kimmobrunfeldt/git-hours#how-it-works
 
-```
-$ git --no-pager log --reverse --date=iso-local --pretty=format:"%ad %an %s" --after="2018-01-01 00:00:00 +0900" --before="2018-12-31 23:59:59 +0900"
-```
-
-시간포맷은 git에서 기본적으로 지원하는 ISO8601 방식을 사용했습니다. 작업시간을 계산하는 방식은 아래 형태를 참고했습니다.
-
-https://github.com/kimmobrunfeldt/git-hours#how-it-works
-
-첫번째 커밋전에 작성하는 코드는 프로그래밍 몰입시간을 포함하여 1시간을 기본값으로 셋팅했습니다. 
+The cod I wrote before the first commit was set to a model that basically add 1 hour, including programming immersion time.
