@@ -65,11 +65,12 @@ $ git hours -author name1,name2
 ```
 
 ### debug mode
+-debug 옵션을 명령어에 붙히면 커밋과 커밋간 시간차를 출력해줍니다. 시간, 작성자, 커밋내용을 볼 수 있습니다.
 ```
 $ git hours -debug
 ```
 
-커밋과 커밋간 시간차를 표기합니다, 시간, 작성자, 커밋내용을 볼 수 있습니다.
+Output example:
 ```
 	 2019-03-31 23:28:40 +0900 kim hanwoong edit go fmt
 2m26s >
@@ -90,7 +91,7 @@ From 2019-02-01 to 2019-03-31 : 13h1m48s
 https://github.com/kimmobrunfeldt/git-hours
 
 위 리포지터리를 통해서 git hours 명령어를 설치하기 위해서는 node.js 및 의존성을 생각하며 설치해야합니다.
-다운로드 하면 바로 사용할 수 있는 툴이 있으면 좋을 것 같아서 제작했습니다.
+다운로드 후 바로 실행할 수 있는 툴이 있으면 좋을 것 같아서 제작했습니다.
 
 git 리포지터리에서 아래명령어를 타이핑하면 commit 시간이 출력됩니다.
 
@@ -102,4 +103,4 @@ $ git --no-pager log --reverse --date=iso-local --pretty=format:"%ad %an %s" --a
 
 https://github.com/kimmobrunfeldt/git-hours#how-it-works
 
-첫번째 커밋전에 작성하는 코드는 프로그래밍 몰입시간을 포함하여 1시간을 기본값으로 셋팅했습니다.
+첫번째 커밋전에 작성하는 코드는 프로그래밍 몰입시간을 포함하여 1시간을 기본값으로 셋팅했습니다. 
