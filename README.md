@@ -1,6 +1,6 @@
 # git-hours
 
-git-hours는 git log 데이터를 이용해서 작업시간을 계산하는 명령어 입니다.
+git-hours is a command that calculates the working time using the git log data.
 
 
 ## Download & Run
@@ -8,10 +8,10 @@ git-hours는 git log 데이터를 이용해서 작업시간을 계산하는 명�
 - [macOS x86-64](https://github.com/lazypic/git-hours/releases/download/v0.0.5/git-hours_darwin_x86-64.tgz)
 - [Linux x86-64](https://github.com/lazypic/git-hours/releases/download/v0.0.5/git-hours_linux_x86-64.tgz)
 
-각 OS에 맞는 명령어를 다운로드 받습니다.
+Download the command for your OS.
 
-터미널에서 명령어를 자동인식 할 수 있는 $PATH 환경변수에 잡혀있는 bin 폴더에 다운받은 git-hours 명령어를 넣어줍니다.
-명령어 이름이 "git-hours"형태이기 때문에 git이 자동으로 서브명령어로 인식합니다.
+put the downloaded command into the bin folder, which is held in the $PATH environment variable.
+Because the command name is of the form "git-hours", git automatically recognizes it as a subcommand.
 
 ## Install use go
 ```
@@ -19,8 +19,9 @@ $ go get -u github.com/lazypic/git-hours
 ```
 
 ## How to use
-git 리포지터리로 이동해서 아래처럼 터미널에서 타이핑해주세요.
-타임존 Offset 값은 지역에 따라서 자동지원합니다.
+Go to the git repository and type in the terminal as shown below.
+- The time zone offset value is automatically supported depending on the region
+- By default, the start and end dates of the last month are specified.
 
 ```
 $ git hours
