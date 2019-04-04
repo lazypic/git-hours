@@ -40,7 +40,7 @@ $ git hours -help
 원한다면 사용자가 아래처럼 시작일, 마지막일을 설정할 수 있습니다.
 
 ```
-$ git hours -since 2019-02-01 -before 2019-02-28
+$ git hours -since 2019-02-01 -before today
 ```
 
 타임존값을 입력해야하는 상황이 필요할때는 아래처럼 입력할 수 있습니다.
