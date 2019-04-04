@@ -35,7 +35,7 @@ From "2019-03-01 00:00:00 +0900" to "2019-03-31 23:59:59 +0900" : 13h20m9s
 $ git hours -help
 ```
 
-### since, before date
+### since, before
 기본적으로 아무값도 넣지 않으면 지난달의 시작일, 마지막일로 설정됩니다.
 원한다면 사용자가 아래처럼 시작일, 마지막일을 설정할 수 있습니다.
 
@@ -54,17 +54,17 @@ $ git hours -since "2019-03-29 13:55:33 +0800"
 $ git hours -since "2019-03-01 00:00:00 +0900" -before "2019-03-31 23:59:59 +0900"
 ```
 
-### set author
+### author
 ```
 $ git hours -author name
 ```
 
-### set mutliple author
+### mutliple author
 ```
 $ git hours -author name1,name2
 ```
 
-### debug mode
+### debug
 -debug 옵션을 명령어에 붙히면 커밋과 커밋간 시간차를 출력해줍니다. 시간, 작성자, 커밋내용을 볼 수 있습니다.
 ```
 $ git hours -debug
