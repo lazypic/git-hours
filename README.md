@@ -28,7 +28,7 @@ $ git hours
 From "2019-03-01 00:00:00 +0900" to "2019-03-31 23:59:59 +0900" : 13h20m9s
 ```
 
-## Detail
+## Detail Options
 
 ### help
 ```
