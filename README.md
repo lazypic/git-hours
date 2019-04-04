@@ -100,4 +100,4 @@ I thought that it would be good if there was a tool that can be executed immedia
 
 reference model : https://github.com/kimmobrunfeldt/git-hours#how-it-works
 
-The cod I wrote before the first commit was set to a model that basically add 1 hour, including programming immersion time.
+The code I wrote before the first commit was set to a model that basically add 1 hour, including programming immersion time.
