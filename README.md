@@ -1,4 +1,4 @@
-# git-hours
+![logo](figures/git-hours.svg)
 
 git-hours is a command that calculates the working time using the git log data.
 
