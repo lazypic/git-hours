@@ -104,4 +104,4 @@ reference model : https://github.com/kimmobrunfeldt/git-hours#how-it-works
 
 The code I wrote before the first commit was set to a model that basically add 1 hour, including programming immersion time.
 
-For me, it is more convenient than https://toggl.com service.
+I like projects that are carried out by telecommuting. For me, it is more convenient than https://toggl.com service. It is also a trust model compared to the toggle service.
