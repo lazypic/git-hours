@@ -103,3 +103,5 @@ I thought that it would be good if there was a tool that can be executed immedia
 reference model : https://github.com/kimmobrunfeldt/git-hours#how-it-works
 
 The code I wrote before the first commit was set to a model that basically add 1 hour, including programming immersion time.
+
+I like projects that are carried out by telecommuting. For me, it is more convenient than https://toggl.com service. It is also a trust model compared to the toggle service.
