@@ -6,9 +6,9 @@ git-hours is a command that calculates the working time using the git log data.
 
 
 ## Download & Run
-- [Windows x86-64](https://github.com/lazypic/git-hours/releases/download/v0.0.5/git-hours_windows_x86-64.tgz)
-- [macOS x86-64](https://github.com/lazypic/git-hours/releases/download/v0.0.5/git-hours_darwin_x86-64.tgz)
-- [Linux x86-64](https://github.com/lazypic/git-hours/releases/download/v0.0.5/git-hours_linux_x86-64.tgz)
+- [Windows x86-64](https://github.com/lazypic/git-hours/releases/download/v0.0.6/git-hours_windows_x86-64.tgz)
+- [macOS x86-64](https://github.com/lazypic/git-hours/releases/download/v0.0.6/git-hours_darwin_x86-64.tgz)
+- [Linux x86-64](https://github.com/lazypic/git-hours/releases/download/v0.0.6/git-hours_linux_x86-64.tgz)
 
 Download the command for your OS.
 
@@ -67,6 +67,15 @@ You can calculate multiple users.
 
 ```
 $ git hours -author name1,name2
+```
+
+### duration
+The duration between git commits defaulted to one hour.
+If you want to change the duration, use the duration option as shown below.
+In the example, we set it to 30 minutes.
+
+```bash
+$ git hours --duration 0.5h
 ```
 
 ### debug

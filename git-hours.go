@@ -48,6 +48,7 @@ func main() {
 	sincePtr := flag.String("since", since+" 00:00:00 "+timeZoneOffset(), "since(after) date")
 	beforePtr := flag.String("before", before+" 23:59:59 "+timeZoneOffset(), "before date")
 	authorPtr := flag.String("author", "", "author name") // git option : --author="\(Adam\)\|\(Jon\)"
+	durationPtr := flag.String("duration", "1h", "git log duration") // default "1h"
 	debugPtr := flag.Bool("debug", false, "debug mode")
 	helpPtr := flag.Bool("help", false, "print help")
 	flag.Parse()
@@ -119,7 +120,7 @@ func main() {
 			}
 			fmt.Println("\t", l)
 		}
-		h, err := time.ParseDuration("1h")
+		h, err := time.ParseDuration(*durationPtr)
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "%v\n", err)
 		}
