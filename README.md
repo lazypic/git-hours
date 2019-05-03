@@ -1,12 +1,14 @@
 ![logo](figures/git-hours.svg)
 
+![travisCI](https://secure.travis-ci.org/lazypic/git-hours.png)
+
 git-hours is a command that calculates the working time using the git log data.
 
 
 ## Download & Run
-- [Windows x86-64](https://github.com/lazypic/git-hours/releases/download/v0.0.5/git-hours_windows_x86-64.tgz)
-- [macOS x86-64](https://github.com/lazypic/git-hours/releases/download/v0.0.5/git-hours_darwin_x86-64.tgz)
-- [Linux x86-64](https://github.com/lazypic/git-hours/releases/download/v0.0.5/git-hours_linux_x86-64.tgz)
+- [Windows x86-64](https://github.com/lazypic/git-hours/releases/download/v0.0.6/git-hours_windows_x86-64.tgz)
+- [macOS x86-64](https://github.com/lazypic/git-hours/releases/download/v0.0.6/git-hours_darwin_x86-64.tgz)
+- [Linux x86-64](https://github.com/lazypic/git-hours/releases/download/v0.0.6/git-hours_linux_x86-64.tgz)
 
 Download the command for your OS.
 
@@ -67,6 +69,15 @@ You can calculate multiple users.
 $ git hours -author name1,name2
 ```
 
+### duration
+The duration between git commits defaulted to one hour.
+If you want to change the duration, use the duration option as shown below.
+In the example, we set it to 30 minutes.
+
+```bash
+$ git hours --duration 0.5h
+```
+
 ### debug
 If you add the -debug option to the command, it prints the time difference between the commit and the commit.
 You can view the time, author, and commit details.
@@ -101,3 +112,5 @@ I thought that it would be good if there was a tool that can be executed immedia
 reference model : https://github.com/kimmobrunfeldt/git-hours#how-it-works
 
 The code I wrote before the first commit was set to a model that basically add 1 hour, including programming immersion time.
+
+I like projects that are carried out by telecommuting. For me, it is more convenient than https://toggl.com service. It is also a trust model compared to the toggle service.
