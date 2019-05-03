@@ -71,7 +71,7 @@ func main() {
 		if getTime == "" {
 			continue
 		}
-		rfctime, err := ISO8601_to_RFC3339(getTime)
+		rfctime, err := ISO8601ToRFC3339(getTime)
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "%v\n", err)
 		}

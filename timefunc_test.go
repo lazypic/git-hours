@@ -19,7 +19,7 @@ func TestISO8601_to_RFC3339(t *testing.T) {
 		err:  "time string is not ISO8601 format.",
 	}}
 	for _, c := range cases {
-		got, err := ISO8601_to_RFC3339(c.in)
+		got, err := ISO8601ToRFC3339(c.in)
 		// check err
 		if err != nil {
 			if err.Error() != c.err {
