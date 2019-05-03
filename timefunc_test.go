@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func TestISO8601_to_RFC3339(t *testing.T) {
+func TestISO8601ToRFC3339(t *testing.T) {
 	cases := []struct {
 		in   string
 		want string
@@ -16,19 +16,19 @@ func TestISO8601_to_RFC3339(t *testing.T) {
 	}, {
 		in:   "",
 		want: "",
-		err:  "time string is not ISO8601 format.",
+		err:  "time string is not ISO8601 format",
 	}}
 	for _, c := range cases {
 		got, err := ISO8601ToRFC3339(c.in)
 		// check err
 		if err != nil {
 			if err.Error() != c.err {
-				t.Fatalf("ISO8601_to_RFC3339(%v): got err %s, want err %v", c.in, err.Error(), c.err)
+				t.Fatalf("ISO8601ToRFC3339(%v): got err %s, want err %v", c.in, err.Error(), c.err)
 			}
 		}
 		// check value
 		if got != c.want {
-			t.Fatalf("ISO8601_to_RFC3339(%v): got %s, want %s", c.in, got, c.want)
+			t.Fatalf("ISO8601ToRFC3339(%v): got %s, want %s", c.in, got, c.want)
 		}
 	}
 }
