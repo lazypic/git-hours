@@ -13,11 +13,11 @@ You can download Git-hours from links down below.
 - [Linux x86-64](https://github.com/lazypic/git-hours/releases/download/v0.0.6/git-hours_linux_x86-64.tgz)
 
 ## Set Environment
+Put the downloaded file into the bin folder, which is set in the $PATH environment variable.
+Then it will be recognized as a subcommand of git.
+Because if a command starts with ‘git-‘, git automatically recognizes it as a subcommand of git.
 
-put the downloaded command into the bin folder, which is held in the $PATH environment variable.
-Because the command name is of the form "git-hours", git automatically recognizes it as a subcommand.
-
-## Install use go
+## Install using Golang
 ```
 $ go get -u github.com/lazypic/git-hours
 ```
