@@ -2,7 +2,7 @@
 
 ![travisCI](https://secure.travis-ci.org/lazypic/git-hours.png)
 
-git-hours is a command that calculates the working time using the git log data.
+Git-hours is a command that calculates the working time using the git log data.
 
 
 ## Download & Run
