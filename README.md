@@ -23,14 +23,17 @@ $ go get -u github.com/lazypic/git-hours
 ```
 
 ## How to use
-Go to the git repository and type in the terminal as shown below.
-- The time zone offset value is automatically supported depending on the region
-- By default, the start and end dates of the last month are specified.
 
-```
+1. Open the terminal
+1. Move to your git repository
+1. Type as shown below
+
+```bash
 $ git hours
 From "2019-03-01 00:00:00 +0900" to "2019-03-31 23:59:59 +0900" : 13h20m9s
 ```
+- The value of timezone offset is automatically set depending on your region.
+- By default, the start date is set as the first day of last month and the end date is set as the last day of last month. 
 
 ## Detail Options
 
