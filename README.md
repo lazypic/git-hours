@@ -43,21 +43,22 @@ $ git hours -help
 ```
 
 ### since, before
-By default, if no value is entered, it is set to the start date and last day of the last month.
-If desired, the user can set the start date and the last date.
+You can set the start date and the end date with this options.
+If you don’t enter any value, start date and end date will be set as the first and last date of last month by default.
 
-```
+```bash
 $ git hours -since 2019-02-01 -before today
 ```
 
-If you want to time zone value, you can type:
-```
+If you want to set timezone value, put timezone value at the end of the command as shown below.
+
+```bash
 $ git hours -since "2019-03-29 13:55:33 +0800"
 ```
 
+If you want to customize every value, enter the date, time, and timezone offset value as shown below.
 
-If you need an accurate quote, enter the date, time, and time zone offset value as shown below.
-```
+```bash
 $ git hours -since "2019-03-01 00:00:00 +0900" -before "2019-03-31 23:59:59 +0900"
 ```
 
