@@ -6,11 +6,13 @@ Git-hours is a command that calculates the working time using the git log data.
 
 
 ## Download & Run
+You can download Git-hours from links down below.
+
 - [Windows x86-64](https://github.com/lazypic/git-hours/releases/download/v0.0.6/git-hours_windows_x86-64.tgz)
 - [macOS x86-64](https://github.com/lazypic/git-hours/releases/download/v0.0.6/git-hours_darwin_x86-64.tgz)
 - [Linux x86-64](https://github.com/lazypic/git-hours/releases/download/v0.0.6/git-hours_linux_x86-64.tgz)
 
-Download the command for your OS.
+## Set Environment
 
 put the downloaded command into the bin folder, which is held in the $PATH environment variable.
 Because the command name is of the form "git-hours", git automatically recognizes it as a subcommand.
