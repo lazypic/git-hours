@@ -63,23 +63,23 @@ $ git hours -since "2019-03-01 00:00:00 +0900" -before "2019-03-31 23:59:59 +090
 ```
 
 ### Authors
-If you want to show specific user data then you can use the `-author` option as shown below.
+If you want to know data of particular user,  use the `-author` option as shown below.
 
 ```bash
 $ git hours -author name
 ```
 
-Also, You can set multiple users setting as shown below.
+Also, You can set more than one user as shown below.
 
 ```bash
 $ git hours -author name1,name2
 ```
 
 ### Duration
-By default, working time was set to 1 hour between the git commit and the next git commit.
-If you want to change the duration, use the `-duration` option as shown below.
-In the example is setting 30 minutes.
+Git-hours calculates working time based on duration. If interval between git commits is less than duration value, Git-hours considers working time was continued.
+By default, duration is set to 1 hour.
 
+In the example, change duration 30min as shown below.
 ```bash
 $ git hours -duration 0.5h
 ```
