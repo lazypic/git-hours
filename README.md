@@ -77,11 +77,11 @@ $ git hours -author name1,name2
 
 ### Duration
 By default, working time was set to 1 hour between the git commit and the next git commit.
-If you want to change the duration, use the `--duration` option as shown below.
+If you want to change the duration, use the `-duration` option as shown below.
 In the example is setting 30 minutes.
 
 ```bash
-$ git hours --duration 0.5h
+$ git hours -duration 0.5h
 ```
 
 ### debug
