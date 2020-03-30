@@ -62,7 +62,7 @@ If you want to customize every value, enter the date, time, and timezone offset 
 $ git hours -since "2019-03-01 00:00:00 +0900" -before "2019-03-31 23:59:59 +0900"
 ```
 
-### Authors
+### author
 If you want to know data of particular user,  use the `-author` option as shown below.
 
 ```bash
@@ -75,7 +75,7 @@ Also, You can set more than one user as shown below.
 $ git hours -author name1,name2
 ```
 
-### Duration
+### duration
 Git-hours calculates working time based on duration. If interval between git commits is less than duration value, Git-hours considers working time was continued.
 By default, duration is set to 1 hour.
 
@@ -85,10 +85,9 @@ $ git hours -duration 0.5h
 ```
 
 ### debug
-If you add the -debug option to the command, it prints the time difference between the commit and the commit.
-You can view the time, author, and commit details.
+You can see detail data with interval between git commits with `-debug` option.
 
-```
+```bash
 $ git hours -debug
 ```
 
@@ -110,13 +109,11 @@ From 2019-02-01 to 2019-03-31 : 13h1m48s
 
 
 ## Why did I make it?
-https://github.com/kimmobrunfeldt/git-hours
-
-To install the git hours command through the above repository uri, you need to install node.js and dependencies.
-I thought that it would be good if there was a tool that can be executed immediately after downloading.
-
-reference model : https://github.com/kimmobrunfeldt/git-hours#how-it-works
-
-The code I wrote before the first commit was set to a model that basically add 1 hour, including programming immersion time.
-
-I like projects that are carried out by telecommuting. For me, it is more convenient than https://toggl.com service. It is also a trust model compared to the toggle service.
+I interest working from home space.
+I research that How did check my working time?
+I looked like a [toggle-style program](https://toggl.com) was too annoying. because the user has to check every time the work starts or ends.
+[kimmobrunfeldt's git-hours](https://github.com/kimmobrunfeldt/git-hours#how-it-works) command model approach looked good to me.
+I installed it via https://github.com/kimmobrunfeldt/git-hours, but it didn't install well on my computer. It was because of the node.js dependency.
+So, I recreated command with Go language in a similar way.
+Also, I added some of the features I needed to create a estimate sheet.
+It's linked at the top of documentation for everyone to download and run. Hope it helps those who need it.
