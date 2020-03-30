@@ -110,7 +110,7 @@ From 2019-02-01 to 2019-03-31 : 13h1m48s
 
 ## Why did I make it?
 I interest working from home space.
-I research that How did check my working time?
+I wanted to know how to get working time.
 I looked like a [toggle-style program](https://toggl.com) was too annoying. because the user has to check every time the work starts or ends.
 [kimmobrunfeldt's git-hours](https://github.com/kimmobrunfeldt/git-hours#how-it-works) command model approach looked good to me.
 I installed it via https://github.com/kimmobrunfeldt/git-hours, but it didn't install well on my computer. It was because of the node.js dependency.
