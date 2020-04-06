@@ -37,12 +37,12 @@ From "2019-03-01 00:00:00 +0900" to "2019-03-31 23:59:59 +0900" : 13h20m9s
 
 ## Detail Options
 
-### help
+### Help
 ```
 $ git hours -help
 ```
 
-### since, before
+### Since, Before
 You can set the start date and the end date with this options.
 If you don’t enter any value, start date and end date will be set as the first and last date of last month by default.
 
@@ -62,7 +62,7 @@ If you want to customize every value, enter the date, time, and timezone offset 
 $ git hours -since "2019-03-01 00:00:00 +0900" -before "2019-03-31 23:59:59 +0900"
 ```
 
-### author
+### Author
 If you want to know data of particular user,  use the `-author` option as shown below.
 
 ```bash
@@ -75,7 +75,7 @@ Also, You can set more than one user as shown below.
 $ git hours -author name1,name2
 ```
 
-### duration
+### Duration
 Git-hours calculates working time based on duration. If interval between git commits is less than duration value, Git-hours considers working time was continued.
 By default, duration is set to 1 hour.
 
@@ -84,8 +84,9 @@ In the example, change duration 30min as shown below.
 $ git hours -duration 0.5h
 ```
 
-### debug
-You can see detail data with interval between git commits with `-debug` option.
+### Debug
+With `-debug` option, You can see the detail of interval between git commits.
+You can view the time, author, and commit details.
 
 ```bash
 $ git hours -debug
@@ -109,11 +110,11 @@ From 2019-02-01 to 2019-03-31 : 13h1m48s
 
 
 ## Why did I make it?
-I interest working from home space.
-I wanted to know how to get working time.
-I looked like a [toggle-style program](https://toggl.com) was too annoying. because the user has to check every time the work starts or ends.
-[kimmobrunfeldt's git-hours](https://github.com/kimmobrunfeldt/git-hours#how-it-works) command model approach looked good to me.
-I installed it via https://github.com/kimmobrunfeldt/git-hours, but it didn't install well on my computer. It was because of the node.js dependency.
-So, I recreated command with Go language in a similar way.
-Also, I added some of the features I needed to create a estimate sheet.
-It's linked at the top of documentation for everyone to download and run. Hope it helps those who need it.
+I'm interested in working from home space.
+I want to calcurate working time.
+I feel that [toggle-style program](https://toggl.com) is high-maintenance tool. because users have to pushing button every time the work starts or ends.
+Mechanism of [kimmobrunfeldt's git-hours](https://github.com/kimmobrunfeldt/git-hours#how-it-works) looked reasonable to me.
+I tried to install via https://github.com/kimmobrunfeldt/git-hours, Because of the node.js dependency, It didn't work well on my computer.
+So, I revise command with Go language based on [kimmobrunfeldt's git-hours](https://github.com/kimmobrunfeldt/git-hours).
+Also, I added some features that help to create an estimate sheet.
+Git-hours opens to everyone to download and run. Hope it helps those in need.
