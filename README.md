@@ -85,8 +85,13 @@ $ git hours -duration 0.5h
 ```
 
 ### Debug
-With `-debug` option, You can see the detail of interval between git commits.
-You can view the time, author, and commit details.
+With `-debug` option, You can see the details.
+You can see information as following:
+
+- interval between git commits
+- time
+- author
+- commit message
 
 ```bash
 $ git hours -debug
@@ -110,11 +115,11 @@ From 2019-02-01 to 2019-03-31 : 13h1m48s
 
 
 ## Why did I make it?
-I'm interested in working from home space.
-I want to calcurate working time.
-I feel that [toggle-style program](https://toggl.com) is high-maintenance tool. because users have to pushing button every time the work starts or ends.
+I want to work regardless of when and where.
+so, I needed to calculate my working time.
+I felt that [toggle-style program](https://toggl.com) is demanding tool. because users have to push button every time the work starts or ends.
 Mechanism of [kimmobrunfeldt's git-hours](https://github.com/kimmobrunfeldt/git-hours#how-it-works) looked reasonable to me.
-I tried to install via https://github.com/kimmobrunfeldt/git-hours, Because of the node.js dependency, It didn't work well on my computer.
-So, I revise command with Go language based on [kimmobrunfeldt's git-hours](https://github.com/kimmobrunfeldt/git-hours).
-Also, I added some features that help to create an estimate sheet.
+I tried to install via https://github.com/kimmobrunfeldt/git-hours. However, Because of the node.js dependency, It didn't work well on my computer.
+So, I revised [kimmobrunfeldt's git-hours](https://github.com/kimmobrunfeldt/git-hours) with Go language.
+Also, While I was revising it, I added some features that help to create an estimate sheet.
 Git-hours opens to everyone to download and run. Hope it helps those in need.
