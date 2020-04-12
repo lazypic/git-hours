@@ -37,12 +37,12 @@ From "2019-03-01 00:00:00 +0900" to "2019-03-31 23:59:59 +0900" : 13h20m9s
 
 ## Detail Options
 
-### help
+### Help
 ```
 $ git hours -help
 ```
 
-### since, before
+### Since, Before
 You can set the start date and the end date with this options.
 If you don’t enter any value, start date and end date will be set as the first and last date of last month by default.
 
@@ -62,7 +62,7 @@ If you want to customize every value, enter the date, time, and timezone offset 
 $ git hours -since "2019-03-01 00:00:00 +0900" -before "2019-03-31 23:59:59 +0900"
 ```
 
-### Authors
+### Author
 If you want to know data of particular user,  use the `-author` option as shown below.
 
 ```bash
@@ -84,11 +84,16 @@ In the example, change duration 30min as shown below.
 $ git hours -duration 0.5h
 ```
 
-### debug
-If you add the -debug option to the command, it prints the time difference between the commit and the commit.
-You can view the time, author, and commit details.
+### Debug
+With `-debug` option, You can see the details.
+You can see information as following:
 
-```
+- interval between git commits
+- time
+- author
+- commit message
+
+```bash
 $ git hours -debug
 ```
 
@@ -110,13 +115,11 @@ From 2019-02-01 to 2019-03-31 : 13h1m48s
 
 
 ## Why did I make it?
-https://github.com/kimmobrunfeldt/git-hours
-
-To install the git hours command through the above repository uri, you need to install node.js and dependencies.
-I thought that it would be good if there was a tool that can be executed immediately after downloading.
-
-reference model : https://github.com/kimmobrunfeldt/git-hours#how-it-works
-
-The code I wrote before the first commit was set to a model that basically add 1 hour, including programming immersion time.
-
-I like projects that are carried out by telecommuting. For me, it is more convenient than https://toggl.com service. It is also a trust model compared to the toggle service.
+I want to work regardless of when and where.
+So, I needed to calculate my working time.
+I felt that [toggle-style program](https://toggl.com) is demanding tool. because users have to click button every time the work starts or ends.
+Mechanism of [kimmobrunfeldt's git-hours](https://github.com/kimmobrunfeldt/git-hours#how-it-works) looked reasonable to me.
+I tried to install via https://github.com/kimmobrunfeldt/git-hours. However, because of the node.js dependency, it didn't work well on my computer.
+So, I revised [kimmobrunfeldt's git-hours](https://github.com/kimmobrunfeldt/git-hours) with Go language.
+Also, while I was revising it, I added some features that help to create an estimate sheet.
+Git-hours opens to everyone to download and run. Hope it helps those in need.
