@@ -2,7 +2,7 @@
 
 ![travisCI](https://secure.travis-ci.org/lazypic/git-hours.png)
 
-Git-hours is a command that calculates the working time using the git log data.
+Git-hours is a command that calculates working time using the git log data.
 
 
 ## Download & Run
@@ -40,6 +40,20 @@ From "2019-03-01 00:00:00 +0900" to "2019-03-31 23:59:59 +0900" : 13h20m9s
 ### Help
 ```
 $ git hours -help
+
+
+  -author string
+    	author name
+  -before string
+    	before date (default "2020-03-31 23:59:59 +0900")
+  -debug
+    	debug mode
+  -duration string
+    	git log duration (default "1h")
+  -help
+    	print help
+  -since string
+    	since(after) date (default "2020-03-01 00:00:00 +0900")
 ```
 
 ### Since, Before
