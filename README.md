@@ -130,11 +130,13 @@ From 2019-02-01 to 2019-03-31 : 13h1m48s
 
 
 ## Why did I make it?
-I want to work regardless of when and where.
-So, I needed to calculate my working time.
+I want to work regardless of when and where. So, I needed to calculate my working time.
+
 My first try was [toggle-style program](https://toggl.com). I felt that it is demanding tool. because users have to click button every time the work starts or ends.
-Mechanism of [kimmobrunfeldt's git-hours](https://github.com/kimmobrunfeldt/git-hours#how-it-works) looked reasonable to me.
-I tried to install via https://github.com/kimmobrunfeldt/git-hours. However, because of the node.js dependency, it didn't work well on my computer.
+
+And the next try was [kimmobrunfeldt's git-hours](https://github.com/kimmobrunfeldt/git-hours#how-it-works). Mechanism of [kimmobrunfeldt's git-hours](https://github.com/kimmobrunfeldt/git-hours#how-it-works) looked reasonable to me.
+However, When I tried to install via https://github.com/kimmobrunfeldt/git-hours it didn't work well on my computer because of the node.js dependency.
+
 So, I revised [kimmobrunfeldt's git-hours](https://github.com/kimmobrunfeldt/git-hours) with Go language.
 Also, while I was revising it, I added some features that help to create an estimate sheet.
 Git-hours opens to everyone to download and run. Hope it helps those in need.
