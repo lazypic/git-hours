@@ -58,7 +58,7 @@ $ git hours -help
 
 ### Since, Before
 You can set the start date and the end date with this options.
-If you don’t enter any value, start date and end date will be set as the first and last date of last month by default.
+If you don’t enter any value, the start date and the end date will be set as the first and last date of last month by default.
 
 ```bash
 $ git hours -since 2019-02-01 -before today
@@ -90,10 +90,11 @@ $ git hours -author name1,name2
 ```
 
 ### Duration
-Git-hours calculates working time based on duration. If interval between git commits is less than duration value, Git-hours considers working time was continued.
+Git-hours calculates working time based on duration. If interval between git commits is less than duration value, Git-hours considers working time was continued. With `-duration` option, you can set duration as you want.
 By default, duration is set to 1 hour.
 
-In the example, change duration 30min as shown below.
+If you want to set duration to 30min, type as shown below.
+
 ```bash
 $ git hours -duration 0.5h
 ```
